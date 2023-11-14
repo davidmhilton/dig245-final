@@ -13,4 +13,7 @@ function generateInsutl(){
 
 }
 
-/*test david-local*/
+let fortuneButton = document.getElementById("genFortune");
+// fortuneButton.addEventListener({
+
+// })
