@@ -1,8 +1,11 @@
 
 /* javascript */
 
-function readData(){
+window.onload = readData();
 
+function readData(){
+    fetch("assets/lib/fortunes.txt")
+    .then(console.log('Data fetched!'));
 }
 
 function learning(){
