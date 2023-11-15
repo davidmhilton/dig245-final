@@ -1,3 +1,8 @@
+
+
+let testDB = `Today it's up to you to you create.`;
+
+
 let fortuneDB = `Today it's up to you to create the peacefulness you long for.
 A friend asks only for your time not your money.
 If you refuse to accept anything but the best, you very often get it.
@@ -826,5 +831,4 @@ Keep your eyes open. You never know what you might see.
 Tell them what you really think. Otherwise, nothing will change.
 Let your heart make your decisions. It does not get as confused as your head.
 Working hard will make you live a happy life.
-A pleasant surprise is waiting for you.
-`
+A pleasant surprise is waiting for you.`;
