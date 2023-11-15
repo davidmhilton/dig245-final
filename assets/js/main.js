@@ -12,7 +12,7 @@ function readData(){
 }
 
 function learning(){
-    
+
     let first_fortune = fortuneDB[0].split(" ");
     training.push({
         sequence: [first_fortune[0], first_fortune[1]],
@@ -28,7 +28,7 @@ function learning(){
             for (let a = 0; a < training.length; a++){
                 if(sq[0] === training[a].sequence[0] && sq[1] === training[a].sequence[1]){
                     training[a].rest.push(next);
-                    console.log("Added to obj!");
+                    // console.log("Added to obj!");
                     repeat = true;
                     break;
                 }
@@ -38,7 +38,7 @@ function learning(){
                     sequence: sq,
                     rest: [next]
                 });
-                console.log("New obj created!");
+                // console.log("New obj created!");
             }
         }
     }
@@ -46,7 +46,10 @@ function learning(){
 }
 
 function generateFortune(){
+    let first_word = "";
+    while (/[A-Z]/.test(first_word) === false){
 
+    }
 }
 
 let fortuneButton = document.getElementById("genFortune");
