@@ -523,7 +523,7 @@ At times it is better to know when to exit than enter.
 Money will come to you when you are doing the right thing.
 When you get something for nothing, you just haven't been billed for it yet.
 You will discover your hidden talents.
-You'll advance for with your abilities.
+You'll advance forth with your abilities.
 When you can't naturally feel upbeat it can sometimes help you to act as if you did.
 You will overcome difficult times.
 Your problem just became your stepping stone.  Catch the moment.

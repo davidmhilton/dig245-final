@@ -1,23 +1,16 @@
 
 /* javascript */
 var fortunes = [];
-var test = [];
 window.onload = readData();
 var training = [];
 learning();
+generateFortune();
 
 function readData(){
     fortunes = fortuneDB.split("\n");
-    test = testDB;
 }
 
 function learning(){
-
-    let first_fortune = fortuneDB[0].split(" ");
-    training.push({
-        sequence: [first_fortune[0], first_fortune[1]],
-        rest: [first_fortune[2]]
-    })
 
     for (let i = 0; i < fortunes.length; i++ ){
         let words = fortunes[i].split(" ");
@@ -28,7 +21,6 @@ function learning(){
             for (let a = 0; a < training.length; a++){
                 if(sq[0] === training[a].sequence[0] && sq[1] === training[a].sequence[1]){
                     training[a].rest.push(next);
-                    // console.log("Added to obj!");
                     repeat = true;
                     break;
                 }
@@ -38,21 +30,52 @@ function learning(){
                     sequence: sq,
                     rest: [next]
                 });
-                // console.log("New obj created!");
             }
         }
     }
     console.log(training);
+    for (let a  = 0; a < training.length; a++){
+        console.log(training[a].sequence);
+    }
 }
 
 function generateFortune(){
     let first_word = "";
     while (/[A-Z]/.test(first_word) === false){
-
+        let rand_index = Math.floor(Math.random()*training.length);
+        let obj = training[rand_index]; 
+        first_word = obj.sequence[0];
+        current_sequence = obj.sequence;
     }
+    let generated_fortune = [current_sequence[0], current_sequence[1]];
+    let next_word = "";
+    while (next_word.indexOf('.') === -1){
+        var location = training.findIndex(function(obj) {
+            if(obj.sequence === current_sequence){
+                return obj;
+            }
+        });
+        let object = training[location];
+        let toPick = object.rest;
+        let index = Math.floor(Math.random()*toPick.length);
+        next_word = toPick[index];
+        generated_fortune.push(next_word);
+        current_sequence = [current_sequence[1], next_word];
+        console.log("break");
+        console.log(current_sequence);
+        // next_word = ".";
+        // let toPick = object.rest;
+        // let index = Math.floor(Math.random()*toPick.length);
+        // next_word = toPick[index];
+        // generated_fortune.push(next_word);
+        // current_sequence = [current_sequence[1], next_word]
+        // console.log(generated_fortune);
+    }
+    // console.log(generated_fortune);
 }
 
 let fortuneButton = document.getElementById("genFortune");
+
 // fortuneButton.addEventListener({
 
 // })
