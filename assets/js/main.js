@@ -33,10 +33,11 @@ function learning(){
             }
         }
     }
-    console.log(training);
-    for (let a  = 0; a < training.length; a++){
-        console.log(training[a].sequence);
-    }
+    // console.log(training);
+    // for (let a  = 0; a < training.length; a++){
+    //     console.log(training[a].sequence);
+    //     console.log(training[a].rest);
+    // }
 }
 
 function generateFortune(){
@@ -49,29 +50,25 @@ function generateFortune(){
     }
     let generated_fortune = [current_sequence[0], current_sequence[1]];
     let next_word = "";
-    while (next_word.indexOf('.') === -1){
+    // while (next_word.indexOf('.') === -1){
+    while(location !== -1){
         var location = training.findIndex(function(obj) {
-            if(obj.sequence === current_sequence){
+            if(obj.sequence[0] === current_sequence[0] && obj.sequence[1] === current_sequence[1]){
                 return obj;
             }
         });
+        if (location === -1){
+            continue;
+        }
         let object = training[location];
         let toPick = object.rest;
         let index = Math.floor(Math.random()*toPick.length);
         next_word = toPick[index];
         generated_fortune.push(next_word);
         current_sequence = [current_sequence[1], next_word];
-        console.log("break");
         console.log(current_sequence);
-        // next_word = ".";
-        // let toPick = object.rest;
-        // let index = Math.floor(Math.random()*toPick.length);
-        // next_word = toPick[index];
-        // generated_fortune.push(next_word);
-        // current_sequence = [current_sequence[1], next_word]
-        // console.log(generated_fortune);
     }
-    // console.log(generated_fortune);
+    console.log(generated_fortune);
 }
 
 let fortuneButton = document.getElementById("genFortune");
