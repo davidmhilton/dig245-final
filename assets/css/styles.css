@@ -1,2 +1,45 @@
-
 /* css */
+
+body {
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: #EEEEEE;
+}
+
+.fortune-container {
+    text-align: center;
+    font-size: 4em;
+}
+
+.my-container {
+    margin-top: 22vh;
+}
+
+.title {
+    padding: 3vh;
+}
+
+:root {
+    --fortune-btn-color: #EEEEEE;
+    --fortune-btn-hover-color: #EEEEEE;
+    --fortune-btn-bg: #1E1E1E;
+    --fortune-btn-hover-bg: #606060;
+    --fortune-btn-hover-border: #1E1E1E;
+    --fortune-btn-active-border: #1E1E1E;
+    --fortune-btn-focus-shadow-rgb: 150, 150, 150;
+}
+
+.btn-fortune{
+    --bs-btn-color: var(--fortune-btn-color);
+    --bs-btn-bg: var(--fortune-btn-bg);
+    --bs-btn-border-color: var(--fortune-btn-bg);
+    --bs-btn-hover-color: var(--fortune-btn-hover-color);
+    --bs-btn-hover-bg: var(--fortune-btn-hover-bg);
+    --bs-btn-hover-border-color: var(--fortune-btn-hover-border);
+    width: 80%;
+    font-family: 'Judson', serif;
+    border-radius: 15px;
+}
+
+#fortune {
+    padding-bottom: 2%
+}
