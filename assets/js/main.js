@@ -68,7 +68,9 @@ function generateFortune(){
         console.log(current_sequence);
     }
     console.log(generated_fortune);
-    return generated_fortune;
+    let clean_fortune = generated_fortune.join(" ");
+    console.log(clean_fortune);
+    return clean_fortune;
 }
 
 let fortuneButton = document.getElementById("genFortune");
