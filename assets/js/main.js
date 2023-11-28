@@ -4,7 +4,6 @@ var fortunes = [];
 window.onload = readData();
 var training = [];
 learning();
-generateFortune();
 
 function readData(){
     fortunes = fortuneDB.split("\n");
@@ -69,10 +68,12 @@ function generateFortune(){
         console.log(current_sequence);
     }
     console.log(generated_fortune);
+    return generated_fortune;
 }
 
 let fortuneButton = document.getElementById("genFortune");
 
-// fortuneButton.addEventListener({
-
-// })
+fortuneButton.addEventListener("click", function (){
+    let fortune = document.getElementById("fortune");
+    fortune.innerText = generateFortune();
+});
