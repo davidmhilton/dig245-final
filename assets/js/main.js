@@ -71,17 +71,17 @@ function generateFortune(){
     }
     console.log(generated_fortune);
 
+    let joined_fortune = generated_fortune.join(' ');
     let fortune = document.getElementById("fortune");
     let index = 0;
 
     function display() {
-        if(index < generated_fortune.length) {
-            fortune.textContent += generated_fortune[index] + ' ';
-            // TO-DO: call a function to type out character by character\
+        if(index < joined_fortune.length) {
+            fortune.textContent += joined_fortune[index];
             // TO-DO: fix the position so it writes across the screen
             // TO-DO: fix the position of the button
             index++;
-            setTimeout(display, 200);
+            setTimeout(display, 80);
         }
     }
 
