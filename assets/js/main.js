@@ -85,15 +85,14 @@ fortuneButton.addEventListener("click", function (){
     function display() {
         if(index < joined_fortune.length) {
             fortune.textContent += joined_fortune[index];
-            // TO-DO: fix the position so it writes across the screen
             // TO-DO: fix the position of the button
             index++;
-            setTimeout(display, 80);
+            setTimeout(display, 75);
+        } else {
+            fortuneButton.disabled = false;
         }
     }
 
-    // fortuneButton.disabled = true;
+    fortuneButton.disabled = true;
     display();
-    // fortuneButton.disabled = false;
-
 });
