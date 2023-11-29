@@ -39,6 +39,8 @@ function learning(){
     // }
 }
 
+let fortuneButton = document.getElementById("genFortune");
+
 function generateFortune(){
     let first_word = "";
     while (/[A-Z]/.test(first_word) === false){
@@ -68,14 +70,30 @@ function generateFortune(){
         console.log(current_sequence);
     }
     console.log(generated_fortune);
-    let clean_fortune = generated_fortune.join(" ");
-    console.log(clean_fortune);
-    return clean_fortune;
-}
 
-let fortuneButton = document.getElementById("genFortune");
+    let fortune = document.getElementById("fortune");
+    let index = 0;
+
+    function display() {
+        if(index < generated_fortune.length) {
+            fortune.innerText += generated_fortune[index] + ' ';
+            index++;
+            fortuneButton.disabled = true;
+            setTimeout(display, 400);
+        }
+    }
+
+    display();
+
+    // let clean_fortune = generated_fortune.join(" ");
+    // console.log(clean_fortune);
+    // return clean_fortune;
+}
 
 fortuneButton.addEventListener("click", function (){
     let fortune = document.getElementById("fortune");
-    fortune.innerText = generateFortune();
+    fortune.innerText = '';
+    generateFortune();
+    fortuneButton.disabled = false;
+    // fortune.innerText = generateFortune();
 });
