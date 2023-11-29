@@ -90,7 +90,7 @@ function learning_3(){
     }
 }
 
-let fortuneButton = document.getElementById("genFortune");
+var fortuneButton = document.getElementById("genFortune");
 
 function generateFortune(dataset){
     let first_word = "";
@@ -149,13 +149,18 @@ function getRandomNum(max) {
 }
 
 fortuneButton.addEventListener("click", function (){
-    let fortune = document.getElementById("fortune");
+    var fortune = document.getElementById("fortune");
     fortune.textContent = '';
-    //TO-DO add slider that picks which training dictionary to use i.e.
-    // more random = training_1
-    // less random = training_3 
-    my_fortune = generateFortune(training_3);
 
+    var slider = document.getElementById("randomness");
+    var my_fortune;
+    if(slider.value == 1){
+        my_fortune = generateFortune(training_3);
+    } else if(slider.value == 2){
+        my_fortune = generateFortune(training_2);
+    } else {
+        my_fortune = generateFortune(training_1);
+    }
     let joined_fortune = my_fortune.join(' ');
     let index = 0;
 
