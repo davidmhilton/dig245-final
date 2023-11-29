@@ -76,14 +76,18 @@ function generateFortune(){
 
     function display() {
         if(index < generated_fortune.length) {
-            fortune.innerText += generated_fortune[index] + ' ';
+            fortune.textContent += generated_fortune[index] + ' ';
+            // TO-DO: call a function to type out character by character\
+            // TO-DO: fix the position so it writes across the screen
+            // TO-DO: fix the position of the button
             index++;
-            fortuneButton.disabled = true;
-            setTimeout(display, 400);
+            setTimeout(display, 200);
         }
     }
 
+    // fortuneButton.disabled = true;
     display();
+    // fortuneButton.disabled = false;
 
     // let clean_fortune = generated_fortune.join(" ");
     // console.log(clean_fortune);
@@ -92,8 +96,7 @@ function generateFortune(){
 
 fortuneButton.addEventListener("click", function (){
     let fortune = document.getElementById("fortune");
-    fortune.innerText = '';
+    fortune.textContent = '';
     generateFortune();
-    fortuneButton.disabled = false;
     // fortune.innerText = generateFortune();
 });
