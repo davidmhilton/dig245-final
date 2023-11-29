@@ -74,6 +74,11 @@ function generateFortune(){
     return generated_fortune;
 }
 
+function getRandomNum(max) {
+    let num = Math.floor(Math.random() * (max - 50) + 50);
+    return num;
+}
+
 fortuneButton.addEventListener("click", function (){
     let fortune = document.getElementById("fortune");
     fortune.textContent = '';
@@ -87,6 +92,7 @@ fortuneButton.addEventListener("click", function (){
             fortune.textContent += joined_fortune[index];
             // TO-DO: fix the position of the button
             index++;
+            // setTimeout(display, getRandomNum(100));
             setTimeout(display, 75);
         } else {
             fortuneButton.disabled = false;
