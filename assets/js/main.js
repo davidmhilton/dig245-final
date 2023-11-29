@@ -71,8 +71,15 @@ function generateFortune(){
     }
     console.log(generated_fortune);
 
-    let joined_fortune = generated_fortune.join(' ');
+    return generated_fortune;
+}
+
+fortuneButton.addEventListener("click", function (){
     let fortune = document.getElementById("fortune");
+    fortune.textContent = '';
+    my_fortune = generateFortune();
+
+    let joined_fortune = my_fortune.join(' ');
     let index = 0;
 
     function display() {
@@ -89,14 +96,4 @@ function generateFortune(){
     display();
     // fortuneButton.disabled = false;
 
-    // let clean_fortune = generated_fortune.join(" ");
-    // console.log(clean_fortune);
-    // return clean_fortune;
-}
-
-fortuneButton.addEventListener("click", function (){
-    let fortune = document.getElementById("fortune");
-    fortune.textContent = '';
-    generateFortune();
-    // fortune.innerText = generateFortune();
 });
