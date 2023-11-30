@@ -44,6 +44,12 @@ body {
     padding-bottom: 2%
 }
 
+.user-control {
+    position: fixed;
+    bottom: 30vh;
+    width: 100%;
+}
+
 /* SLider code from W3Schools
 Link: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
