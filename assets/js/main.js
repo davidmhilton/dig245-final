@@ -143,11 +143,6 @@ function generateFortune(dataset){
 }
 
 
-function getRandomNum(max) {
-    let num = Math.floor(Math.random() * (max - 50) + 50);
-    return num;
-}
-
 fortuneButton.addEventListener("click", function (){
     var fortune = document.getElementById("fortune");
     fortune.textContent = '';
