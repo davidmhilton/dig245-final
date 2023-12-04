@@ -167,9 +167,7 @@ fortuneButton.addEventListener("click", function (){
     function display() {
         if(index < joined_fortune.length) {
             fortune.textContent += joined_fortune[index];
-            // TO-DO: fix the position of the button
             index++;
-            // setTimeout(display, getRandomNum(100));
             setTimeout(display, 75);
         } else {
             fortuneButton.disabled = false;

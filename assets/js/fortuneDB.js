@@ -1,7 +1,5 @@
-
-
-let testDB = `Today it's up to you to you create.`;
-
+/* Data pulled from http://www.fortunecookiemessage.com/archive.php?start= 
+with Pyhton beautiful soup library. */
 
 let fortuneDB = `Today it's up to you to create the peacefulness you long for.
 A friend asks only for your time not your money.
