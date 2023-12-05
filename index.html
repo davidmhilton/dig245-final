@@ -19,42 +19,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <!-- Style Sheet -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/intro.css">
 </head>
 
 <body>
-
     <!-- visible content goes here -->
-    <div class="container">
-        <h1 class="title" style="font-weight: bold;">Find your fortune, sometimes...</h1>
-        <div class="my-container">
-            <div class="row fortune-container">
-                <div class="col-12">
-                    <div class="d-flex justify-content-center">
-                        <span id="fortune"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="bottom: 30vh; width: 100%; margin-top: 100px;">
-                <div class="col-12 col-md-10 offset-md-1">
-                    <div class="row">
-                        <div class="col-5 col-md-5 offset-1">
-                            Randomness
-                            <input type="range" min="1" max="3" value="1" step="1" class="slider" id="randomness">
-                        </div>
-                        <div class="col-4 offset-1">
-                            <button id="genFortune" class="btn btn-fortune">generate</button>
-                        </div>
-                    </div>
-                </div>
+    <div clas="container">
+        <div class="row" style="margin-top: 50px;">
+                <h1 style="text-align: center;">Random Fortune Generator</h1>
+        </div>
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                <p style="font-size: 15px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ultricies integer quis auctor elit sed vulputate. Elit ullamcorper dignissim cras tincidunt lobortis. 
+                    Eu augue ut lectus arcu bibendum at varius vel. Scelerisque felis imperdiet proin fermentum leo vel orci.
+                    Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Convallis tellus id interdum velit laoreet id. 
+                    Morbi leo urna molestie at elementum eu facilisis. Adipiscing at in tellus integer feugiat scelerisque varius morbi. 
+                    Purus non enim praesent elementum facilisis. Varius morbi enim nunc faucibus a pellentesque. 
+                    In massa tempor nec feugiat nisl pretium fusce. Lobortis elementum nibh tellus molestie. Id diam vel quam elementum pulvinar etiam.
+                    Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Sed nisi lacus sed viverra tellus in. 
+                    Congue eu consequat ac felis. Vel pretium lectus quam id leo in. 
+                    Lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Lorem ipsum dolor sit amet consectetur adipiscing.
+                    Morbi quis commodo odio aenean sed adipiscing diam. Iaculis urna id volutpat lacus laoreet non. Amet nisl purus in mollis nunc sed id semper. 
+                    Sed viverra tellus in hac habitasse platea. Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. 
+                    Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Vitae suscipit tellus mauris a diam maecenas sed enim. 
+                    Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Magna etiam tempor orci eu lobortis elementum nibh tellus. 
+                    Dapibus ultrices in iaculis nunc sed augue lacus viverra. Condimentum mattis pellentesque id nibh. 
+                    Arcu risus quis varius quam quisque. Tellus in hac habitasse platea dictumst vestibulum.
+                </p> 
             </div>
         </div>
+        <div class="row">
+            <a href="./main.html" style="text-align: center;">get started</a>
+        </div>
     </div>
-
     <!-- load javascript after the page elements render -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="assets/js/fortuneDB.js"></script>
-    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>
