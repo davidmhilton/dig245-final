@@ -2,3 +2,35 @@ body {
     font-family: 'Julius Sans One', sans-serif;
     background-color: #EEEEEE;
 }
+
+p{
+    font-size: 15px;
+    font-family: serif;
+}
+
+h1{
+    margin-bottom: 50px;
+}
+
+#wrapper{
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 200px;
+    height: 40px;
+    background-color: #1E1E1E;
+    color:#EEEEEE;
+    border-radius: 50px;
+}
+
+button:hover{
+    background-color: #EEEEEE;
+    color:#1E1E1E;
+}
+
+

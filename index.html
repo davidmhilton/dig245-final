@@ -30,28 +30,33 @@
         </div>
         <div class="row">
             <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-                <p style="font-size: 15px;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ultricies integer quis auctor elit sed vulputate. Elit ullamcorper dignissim cras tincidunt lobortis. 
-                    Eu augue ut lectus arcu bibendum at varius vel. Scelerisque felis imperdiet proin fermentum leo vel orci.
-                    Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Convallis tellus id interdum velit laoreet id. 
-                    Morbi leo urna molestie at elementum eu facilisis. Adipiscing at in tellus integer feugiat scelerisque varius morbi. 
-                    Purus non enim praesent elementum facilisis. Varius morbi enim nunc faucibus a pellentesque. 
-                    In massa tempor nec feugiat nisl pretium fusce. Lobortis elementum nibh tellus molestie. Id diam vel quam elementum pulvinar etiam.
-                    Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Sed nisi lacus sed viverra tellus in. 
-                    Congue eu consequat ac felis. Vel pretium lectus quam id leo in. 
-                    Lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Lorem ipsum dolor sit amet consectetur adipiscing.
-                    Morbi quis commodo odio aenean sed adipiscing diam. Iaculis urna id volutpat lacus laoreet non. Amet nisl purus in mollis nunc sed id semper. 
-                    Sed viverra tellus in hac habitasse platea. Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. 
-                    Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Vitae suscipit tellus mauris a diam maecenas sed enim. 
-                    Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Magna etiam tempor orci eu lobortis elementum nibh tellus. 
-                    Dapibus ultrices in iaculis nunc sed augue lacus viverra. Condimentum mattis pellentesque id nibh. 
-                    Arcu risus quis varius quam quisque. Tellus in hac habitasse platea dictumst vestibulum.
+                <p>
+                    While a simple design on the surface, this fortune cookie generator operates on mathematical methods that are used in large language models (LLMs).
+                     We sought to create a text generation application that uses an underlying database to determine the user experience.
+                     After experimenting with different generative goals, we landed on using a database to generate fortunes that you might find 
+                     inside your cookie.
+                </p>
+                <p>  
+                    Using python data scraping tools, we pulled all of our information from 
+                     <a href="http://www.fortunecookiemessage.com/archive.php?start=">Fortune Cookie Messages</a> 
+                     which is a database of fortunes that individuals have found in their cookies and submitted to the forum. This was intriguing
+                     to us as the data is derived (or so they say) from real world fortunes. Once all of this data was collected, it was transferred
+                     to a json object which can then be processed by our application. This is where the mathematical model used by LLMs comes into 
+                     play. We use the input data to ‘train’ dictionaries in our code that will then be used to generate predictive output. 
+                     In essence, the training algorithm iterates over all text input and records the words that immediately follow specific sequences
+                     of words. For our purposes, we used sequences of one, two and three. 
+                <p>     
+                     For example, if the 2-gram sequence (“The”, “world”) is 
+                     followed by “is”, then “is” is added to the list of words that corresponds to the 2-gram sequence. Say later that (“The”, “world”) 
+                     is followed by “was”, then “was” is added to the list. So the object for the 2-gram sequence has key (“The”, “world”) and value 
+                     [“is”, “was”]. To then generate a fortune, we pick a random sequence to start with and then pick a random word from the value that
+                     is associated with the sequence. We repeat this until we have a sequence that is not followed by any words. 
+                     And you have your fortune! Try it yourself, if you're feeling lucky...
                 </p> 
             </div>
         </div>
-        <div class="row">
-            <a href="./main.html" style="text-align: center;">get started</a>
+        <div id="wrapper">
+            <button onclick="window.location.href='./main.html'">get started</button>
         </div>
     </div>
     <!-- load javascript after the page elements render -->
