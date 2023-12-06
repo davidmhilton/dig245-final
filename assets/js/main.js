@@ -2,20 +2,31 @@
 
 var fortunes = [];
 window.onload = readData();
+var training_0 = [];
 var training_1 = [];
 var training_2 = [];
 var training_3 = [];
+learning_0();
 learning_1();
 learning_2();
 learning_3();
+console.log(training_0);
 
 
 function readData(){
     fortunes = fortuneDB.split("\n");
 }
 
-function learning_1(){
+function learning_0(){
+    for (let i = 0; i< fortunes.length; i++){
+        let words =fortunes[i].split(" ")
+        for(let j = 0; j < words.length; j++){
+            training_0.push(words[j]);
+        }
+    }
+}
 
+function learning_1(){
     for (let i = 0; i < fortunes.length; i++ ){
         let words = fortunes[i].split(" ");
         for(let j = 0; j < words.length-1; j++){
@@ -92,6 +103,21 @@ function learning_3(){
 
 var fortuneButton = document.getElementById("genFortune");
 
+function zeroGram(){
+    let first_word = "";
+    while (/[A-Z]/.test(first_word) === false){
+        let rand_index = Math.floor(Math.random()*training_0.length);
+        first_word = training_0[rand_index];
+    }
+    let generated_fortune = [first_word];
+    let length = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+    for(let i = 0; i < length; i++){
+        rand_index = Math.floor(Math.random()*training_0.length);
+        generated_fortune.push(training_0[rand_index])
+    }
+    return generated_fortune;
+}
+
 function generateFortune(dataset){
     let first_word = "";
     while (/[A-Z]/.test(first_word) === false){
@@ -153,8 +179,11 @@ fortuneButton.addEventListener("click", function (){
         my_fortune = generateFortune(training_3);
     } else if(slider.value == 2){
         my_fortune = generateFortune(training_2);
-    } else {
+    } else if(slider.value == 3) {
         my_fortune = generateFortune(training_1);
+    }
+    else{
+        my_fortune = zeroGram();
     }
     let joined_fortune = my_fortune.join(' ');
     let index = 0;

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- meta tags, links to css, etc. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feeling lucky?</title>
+
+    <!-- Font Family -->
+    <!-- TO-DO Bundle together on Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Judson&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="assets/css/about.css">
+</head>
+
+<body>
+    <!-- visible content goes here -->
+    <div clas="container">
+        <div class="row" style="margin-top: 50px;">
+                <h1 style="text-align: center;">Random Fortune Generator</h1>
+        </div>
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                <p>
+                    While a simple design on the surface, this fortune cookie generator operates on mathematical methods that are used in large language models (LLMs).
+                     We sought to create a text generation application that uses an underlying database to determine the user experience.
+                     After experimenting with different generative goals, we landed on using a database to generate fortunes that you might find 
+                     inside your cookie.
+                </p>
+                <p>  
+                    Using python data scraping tools, we pulled all of our information from 
+                     <a href="http://www.fortunecookiemessage.com/archive.php?start=">Fortune Cookie Messages</a> 
+                     which is a database of fortunes that individuals have found in their cookies and submitted to the forum. This was intriguing
+                     to us as the data is derived (or so they say) from real world fortunes. Once all of this data was collected, it was transferred
+                     to a json object which can then be processed by our application. This is where the mathematical model used by LLMs comes into 
+                     play. We use the input data to ‘train’ dictionaries in our code that will then be used to generate predictive output. 
+                     In essence, the training algorithm iterates over all text input and records the words that immediately follow specific sequences
+                     of words. For our purposes, we used sequences of one, two and three. 
+                <p>     
+                     For example, if the 2-gram sequence (“The”, “world”) is 
+                     followed by “is”, then “is” is added to the list of words that corresponds to the 2-gram sequence. Say later that (“The”, “world”) 
+                     is followed by “was”, then “was” is added to the list. So the object for the 2-gram sequence has key (“The”, “world”) and value 
+                     [“is”, “was”]. To then generate a fortune, we pick a random sequence to start with and then pick a random word from the value that
+                     is associated with the sequence. We repeat this until we have a sequence that is not followed by any words. 
+                     And you have your fortune! Try it yourself, if you're feeling lucky...
+                </p> 
+            </div>
+        </div>
+        <div id="wrapper">
+            <button onclick="window.location.href='./index.html'">back home</button>
+        </div>
+    </div>
+    <!-- load javascript after the page elements render -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+</body>
+</html>

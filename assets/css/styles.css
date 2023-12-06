@@ -15,7 +15,28 @@ body {
 }
 
 .title {
-    padding: 3vh;
+    margin-top:25px;
+    margin-bottom: 100px;
+}
+
+#wrapper{
+    position: fixed;
+    top:25px;
+    right:25px;
+}
+
+.about{
+    width: 150px;
+    height: 50px;
+    background-color: EEEEEE;
+    color:#1E1E1E;
+    border-radius: 1px;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.about:hover{
+    opacity: 1;
 }
 
 :root {
@@ -54,6 +75,7 @@ body {
 Link: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 
 .slider {
+    overflow: hidden;
     -webkit-appearance: none;
     width: 100%;
     height: 10px;
