@@ -168,12 +168,12 @@ function generateFortune(dataset){
     return generated_fortune;
 }
 
+var slider = document.getElementById("randomness");
 
 fortuneButton.addEventListener("click", function (){
     var fortune = document.getElementById("fortune");
     fortune.textContent = '';
 
-    var slider = document.getElementById("randomness");
     var my_fortune;
     if(slider.value == 1){
         my_fortune = generateFortune(training_3);
@@ -200,4 +200,15 @@ fortuneButton.addEventListener("click", function (){
 
     fortuneButton.disabled = true;
     display();
+});
+
+/* Original slider progress bar provided by
+https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/
+*/
+slider.addEventListener("input", (event) => {
+    let sliderValue = parseInt(event.target.value) - 1;
+    let max = parseInt(event.target.max) - 1;
+    let progress = (sliderValue / max) * 100;
+
+    slider.style.background = `linear-gradient(to right, #1E1E1E ${progress}%, white ${progress}%)`;
 });
