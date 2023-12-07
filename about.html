@@ -49,7 +49,8 @@
                      For example, if the 2-gram sequence (“The”, “world”) is 
                      followed by “is”, then “is” is added to the list of words that corresponds to the 2-gram sequence. Say later that (“The”, “world”) 
                      is followed by “was”, then “was” is added to the list. So the object for the 2-gram sequence has key (“The”, “world”) and value 
-                     [“is”, “was”]. To then generate a fortune, we pick a random sequence to start with and then pick a random word from the value that
+                     [“is”, “was”]. The randomness slider specifies what length gram we will use for generation, 3-gram being the least random and 0-gram being the most.
+                     To then generate a fortune, we pick a random sequence to start with and then pick a random word from the value that
                      is associated with the sequence. We repeat this until we have a sequence that is not followed by any words. 
                      And you have your fortune! Try it yourself, if you're feeling lucky...
                 </p> 
